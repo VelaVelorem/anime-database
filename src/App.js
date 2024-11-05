@@ -7,10 +7,10 @@ import NavFilter from './components/NavFilter';
 function App() {
   return (
     <div>
-      <AnimeDatabase />
-      <Footer />
       <Header />
-      <NavFilter />
+      <NavFilter/>
+      <AnimeDatabase/>
+      <Footer />
     </div>
   );
 }
