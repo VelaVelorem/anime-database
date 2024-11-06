@@ -30,7 +30,8 @@ module.exports = {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-      rajdhani: ['Rajdhani', 'sans-serif']
+      rajdhani: ['Rajdhani', 'sans-serif'],
+      megrim: ['Megrim', 'sans-serif']
     },
     extend: {
       spacing: {

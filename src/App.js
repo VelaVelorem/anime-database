@@ -8,8 +8,8 @@ function App() {
   return (
     <div>
       <Header />
-      <NavFilter/>
-      <AnimeDatabase/>
+        <NavFilter />
+        <AnimeDatabase />
       <Footer />
     </div>
   );

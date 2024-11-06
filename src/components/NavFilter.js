@@ -4,22 +4,23 @@ const NavFilter = () => {
     return (
         <>
         <nav>
-            <div className="w-60 bg-midnight">
-                <ul>
+            <div className="w-full p-5 shadow-xl">
+                <ul className="flex justify-evenly tracking-wider text-sm">
+
                     <li>
-                        Grne
+                        <select name="anime-genres" id="genres" className="rounded-md px-8 py-1 text-midnight">
+                            <option value="" selected disabled>Select genre...</option>
+                            <option value="">Action</option>
+                            <option value="">Adventure</option>
+                            <option value="">Mystery</option>
+                            <option value="">Shoujo</option>
+                            <option value="">Shounen</option>
+                        </select>
                     </li>
                     <li>
-                        Grne
-                    </li>
-                    <li>
-                        Grne
-                    </li>
-                    <li>
-                        Grne
-                    </li>
-                    <li>
-                        Grne
+                        <form>
+                            <input type="text" className="rounded-md px-8 py-1" placeholder="Search Anime..."></input>
+                        </form>
                     </li>
                 </ul>
             </div>
