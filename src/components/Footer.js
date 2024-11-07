@@ -12,6 +12,7 @@ const Footer = () => {
                 <li className="mb-1">Email</li>
                 <li className="mb-1">Resume</li>
             </ul>
+            <p className="text-xs text-pewter text-center tracking-wider">@2024 Haneefah Witherspoon</p>
         </footer>
         </>
     )

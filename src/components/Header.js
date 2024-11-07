@@ -13,7 +13,7 @@ const Header = () => {
                                 <button type="button" className="rounded-md px-3 py-1 bg-gray-light">Sign in</button>
                             </li>
                             <li>
-                                <button type="button" className="rounded-md px-3 py-1 bg-gray-light">Sign up</button>
+                                <button type="button" className="rounded-md px-3 py-1 bg-seafoam text-white">Sign up</button>
                             </li>
                         </ul>
                     </div>

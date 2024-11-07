@@ -26,6 +26,8 @@ module.exports = {
       'teal': '#2b7c85',
       'tealgreen': '#175873',
       'royal-blue': '#0c1446',
+      'black': '#000000',
+      'white': '#ffffff',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
