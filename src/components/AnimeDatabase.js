@@ -1,27 +1,28 @@
-import '../styles/AnimeDatabase.module.css' 
-import { useState, useEffect } from 'react';
-import AnimeGallery from './AnimeGallery';
+// import '../styles/AnimeDatabase.module.css' 
+// import { useState, useEffect } from 'react';
+// import AnimeGallery from './AnimeGallery';
+// import NavFilter from './NavFilter';
 
 
-const AnimeDatabase = () => {
+// const AnimeDatabase = () => {
 
-    const animeApi = 'https://api.jikan.moe/v4/top/anime?type=tv&sfw=true&limit=12&filter=airing';
-    const [ animeList, setAnimeList ] = useState([]);
+//     const animeApi = 'https://api.jikan.moe/v4/top/anime?type=tv&sfw=true&limit=12&filter=airing';
+//     const [ animeList, setAnimeList ] = useState([]);
 
-    useEffect(() => {
-        const fetchAnimeGenre = async () => {
-            const result = await fetch(animeApi);
-            const data = await result.json();
-            setAnimeList(data.data);
-        };
-        fetchAnimeGenre();
-    }, []);
+//     useEffect(() => {
+//         const fetchAnimeGenre = async () => {
+//             const result = await fetch(animeApi);
+//             const data = await result.json();
+//             setAnimeList(data.data);
+//         };
+//         fetchAnimeGenre();
+//     }, []);
 
-    return (
-        <>
-        <AnimeGallery animeList={animeList} />
-        </>
-    )
-}
+//     return (
+//         <>
+//         <AnimeGallery animeList={animeList} />
+//         </>
+//     )
+// }
 
-export default AnimeDatabase;
+// export default AnimeDatabase;

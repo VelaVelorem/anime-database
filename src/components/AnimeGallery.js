@@ -10,7 +10,7 @@ const AnimeGallery = ({ animeList }) => {
                         <img className="anime-card-poster h-72" src={anime.images.jpg.image_url} alt={anime.title} />
                         <div className="anime-details p-3 w-full flex flex-col overflow-ellipsis overflow-auto">
                             <h3 className="anime-card-title text-xl tracking-wide text-balance text-baby-blue font-bold"> {anime.title}</h3>
-                            <p className="anime-card-synopsis text-sm mt-2 text-gray-light"> Episodes: {anime.episodes || 'NA'}</p>
+                            <p className="anime-card-synopsis text-sm mt-2 text-gray-light"> Episodes: {anime.episodes || 'N/A'}</p>
                             <p className="anime-card-rating text-sm text-gray-light"> Rating: {anime.score}</p>
                             <p className="anime-card-status text-sm text-gray-light"> Status: {anime.status}</p>
                             <p className="anime-genres text-sm text-gray-light flex flex-wrap">
