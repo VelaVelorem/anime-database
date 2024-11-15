@@ -11,6 +11,9 @@ I chose this project because I enjoy watching anime and thought it would be a fu
 ## Features
 
 ### 1. Anime Gallery 🖼️
+
+![Anime Gallery Screenshot](https://i.imgur.com/LesGhLo.png)
+
    - Displays a grid of top airing, safe-for-work anime.
    - Each anime card dynamically shows details such as title, number of episodes, and genres.
    - Limits to 12 anime at a time for a smooth experience.
