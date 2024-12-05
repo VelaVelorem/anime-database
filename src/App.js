@@ -6,8 +6,7 @@ import NavFilter from './components/NavFilter';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const animeApi = 'https://api.jikan.moe/v4/top/anime?type=tv&sfw=true&limit=12&filter=airing';
-
+  const animeApi = 'https://api.jikan.moe/v4/top/anime?type=tv&sfw=true&limit=13&filter=airing';
   const [animeList, setAnimeList] = useState([]);
   const [filteredAnime, setFilteredAnime] = useState([])
 
@@ -15,11 +14,22 @@ function App() {
     const fetchAnimeGenre = async () => {
       const result = await fetch(animeApi);
       const data = await result.json();
-      setAnimeList(data.data);
-      setFilteredAnime(data.data);
+  
+      const uniqueAnime = data.data.reduce((acc, current) => {
+        const isDuplicate = acc.find(item => item.title === current.title);
+        return isDuplicate ? acc : [...acc, current];
+      }, []);
+  
+      const transformedData = uniqueAnime.map((obj) => ({ ...obj, id: crypto.randomUUID(), }));
+  
+      setAnimeList(transformedData);
+      setFilteredAnime(transformedData);
     };
+  
     fetchAnimeGenre();
   }, []);
+  
+
 
   return (
     <>
