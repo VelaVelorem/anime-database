@@ -19,7 +19,7 @@ const AnimeGallery = ({ animeList }) => {
     return (
         <>
             <section
-                className="anime-gallery container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-3 py-3 mt-20">
+                className="anime-gallery container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-3 py-3 mt-20 hover:cursor-pointer">
                 {animeList.map((anime, index) => (
                     <div
                         className="anime-card flex mx-3 my-2 rounded-lg h-72 bg-gray-dark shadow-md hover:-translate-y-3"
@@ -44,27 +44,29 @@ const AnimeGallery = ({ animeList }) => {
             </section>
 
             {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white rounded-lg shadow-lg p-5 w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3">
-                        <div className="flex justify-between items-center">
-                            <h2 className="text-2xl font-bold">{selectedAnime?.title}</h2>
-                            <button className="text-gray-dark hover:text-gray bg-gray p-3" onClick={handleCloseModal}>Exit</button>
-                        </div>
-                        <div className="mt-4">
+                <div className="fixed flex inset-0 items-center justify-center z-50 bg-black bg-opacity-50">
+                    <div className="bg-white items-center rounded-lg shadow-lg p-5 max-h-screen sm:w-3/3 md:w-3/3 lg:w-1/3">
+                        <h2
+                            className="text-3xl font-bold mb-5 text-center text-wrap text-midnight">
+                            {selectedAnime?.title}
+                        </h2>
+
+                        <div className="mt-4 img-text flex">
                             <img
-                                className="rounded-lg w-full mb-4"
+                                className="rounded-lg mb-4 h-96"
                                 src={selectedAnime?.images.jpg.large_image_url || selectedAnime?.images.jpg.image_url}
                                 alt={selectedAnime?.title}
                             />
-                            <p className="text-sm text-gray-700 mb-2">Episodes: {selectedAnime?.episodes || 'N/A'}</p>
-                            <p className="text-sm text-gray-700 mb-2">Rating: {selectedAnime?.score || 'N/A'}</p>
-                            <p className="text-sm text-gray-700 mb-2">Status: {selectedAnime?.status || 'N/A'}</p>
-                            <p className="text-sm text-gray-700">{selectedAnime?.synopsis || 'No description available.'}</p>
-                        </div>
-                        <div className="mt-5 text-right">
-                            <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" onClick={handleCloseModal}>
-                                Close
-                            </button>
+                            <div className="flex flex-col flex-wrap items-center justify-center">
+                                <p className="text-md text-gray-700 px-7">{selectedAnime?.synopsis || 'No description available.'}</p>
+
+                                <div className="btn-holder">
+                                    <button
+                                        className="text-white hover:text-gray px-4 py-1 mt-5 bg-seafoam rounded-lg"
+                                        onClick={handleCloseModal}>Return
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
