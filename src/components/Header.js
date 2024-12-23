@@ -21,8 +21,18 @@ const Header = () => {
             password: ''
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            console.log("onSubmit", values);
         },
+        validate: (values) => {
+            const errors = {}
+            if (!values.username) {
+                errors.username = 'username is required'
+            }
+            if (!values.password) {
+                errors.password = 'password is required'
+            }
+            return errors;
+        }
     });
 
     return (
@@ -52,15 +62,17 @@ const Header = () => {
                                             <div className="userHolder flex flex-col">
                                                 <label
                                                     htmlFor="username"
-                                                    className="mb-3 text-sm uppercase tracking-wider">Enter your username</label>
+                                                    className="mb-3 text-sm uppercase tracking-wider">username</label>
                                                 <input
                                                     id="username"
                                                     name="username"
                                                     type="username"
                                                     onChange={formik.handleChange}
-                                                    value={formik.values.email}
-                                                    className="py-2 rounded-sm px-1 text-baby-blue bg-black bg-opacity-20 focus:shadow-blue focus:shadow-md focus:border transition-all border hover:cursor-pointer"
+                                                    value={formik.values.username}
+                                                    className="py-2 rounded-md px-1 text-baby-blue bg-black bg-opacity-20 focus:shadow-blue focus:shadow-md focus:border transition-all border hover:cursor-pointer"
+                                                    required
                                                 />
+                                                <div className="error text-sm text-orange tracking-widest uppercase">{formik.errors.username && formik.touched.username && formik.errors.username} </div>
                                             </div>
 
                                             <hr className="my-7 text-baby-blue text-opacity-15" />
@@ -69,16 +81,17 @@ const Header = () => {
                                                 <label
                                                     htmlFor="password"
                                                     className="mb-3 text-sm uppercase tracking-wider"
-                                                    required>Enter your password</label>
+                                                    >password</label>
                                                 <input
                                                     id="password"
                                                     name="password"
                                                     type="password"
                                                     onChange={formik.handleChange}
                                                     value={formik.values.password}
-                                                    className="py-2 rounded-sm px-1 text-baby-blue bg-black bg-opacity-20 focus:shadow-blue focus:shadow-md focus:border transition-all border border-baby-blue hover:cursor-pointer"
-                                                    required
+                                                    className="py-2 rounded-md px-1 text-baby-blue bg-black bg-opacity-20 focus:shadow-blue focus:shadow-md focus:border transition-all border border-baby-blue hover:cursor-pointer"
+                                                    
                                                 />
+                                                <div className="error text-sm text-orange tracking-widest uppercase">{formik.errors.password && formik.touched.password && formik.errors.password} </div>
                                             </div>
 
 
@@ -91,13 +104,14 @@ const Header = () => {
                                                 <button
                                                     type="button"
                                                     onClick={handleCloseLogin}
-                                                    className="rounded-md px-4 py-1  text-white uppercase text-sm hover:shadow-md hover:shadow-blue transition-all">Close</button>
+                                                    className="rounded-md px-4 py-1  text-white uppercase text-sm hover:shadow-md hover:shadow-blue transition-all">Close
+                                                    </button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             ) : null}
-                            
+
                         </ul>
                     </div>
 
