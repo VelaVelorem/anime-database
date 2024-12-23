@@ -44,25 +44,25 @@ const AnimeGallery = ({ animeList }) => {
             </section>
 
             {isModalOpen && (
-                <div className="fixed flex inset-0 items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white items-center rounded-lg shadow-lg p-5 max-h-screen sm:w-3/3 md:w-3/3 lg:w-1/3">
+                <div className="fixed flex inset-0 items-center justify-center z-50 bg-black bg-opacity-60 ">
+                    <div className="bg-white items-center rounded-lg shadow-lg p-5 max-h-full sm:w-3/3 md:w-3/3 lg:w-1/3">
                         <h2
-                            className="text-3xl font-bold mb-5 text-center text-wrap text-midnight">
+                            className="text-3xl font-bold mb-6 tracking-wider text-center text-wrap text-midnight">
                             {selectedAnime?.title}
                         </h2>
 
-                        <div className="mt-4 img-text flex">
+                        <div className="mt-4 img-text flex px-3">
                             <img
                                 className="rounded-lg mb-4 h-96"
                                 src={selectedAnime?.images.jpg.large_image_url || selectedAnime?.images.jpg.image_url}
                                 alt={selectedAnime?.title}
                             />
                             <div className="flex flex-col flex-wrap items-center justify-center">
-                                <p className="text-md text-gray-700 px-7">{selectedAnime?.synopsis || 'No description available.'}</p>
+                                <p className="text-md text-gray-700 px-7 max-h-128 text-wrap text-ellipsis overflow-y-auto">{selectedAnime?.synopsis || 'No description available.'}</p>
 
                                 <div className="btn-holder">
                                     <button
-                                        className="text-white hover:text-gray px-4 py-1 mt-5 bg-seafoam rounded-lg"
+                                        className="text-white px-4 py-1 mt-5 bg-seafoam rounded-lg uppercase tracking-wider hover:text-gray-light hover:bg-midnight shadow-md transition-all"
                                         onClick={handleCloseModal}>Return
                                     </button>
                                 </div>
